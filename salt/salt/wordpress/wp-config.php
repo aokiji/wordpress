@@ -83,7 +83,10 @@ define('WP_DEBUG', false);
 
 /** Absolute path to the WordPress directory. */
 if ( !defined('ABSPATH') )
-	define('ABSPATH', dirname(__FILE__) . '/');
+  define('ABSPATH', dirname(__FILE__) . '/');
+
+define('WP_HOME','http://192.168.33.10/wordpress');
+define('WP_SITEURL','http://192.168.33.10/wordpress');
 
 /** Sets up WordPress vars and included files. */
 require_once(ABSPATH . 'wp-settings.php');

@@ -32,3 +32,17 @@ start httpd service:
     - name: httpd
     - enable: True
 
+configure wordpress admin account:
+  http.query:
+    - name: 'http://localhost/wordpress/wp-admin/install.php?step=2'
+    - method: POST
+    - status: 200
+    - data: {
+      weblog_title: 'admin',
+      user_name: 'admin',
+      pass1-text: 'admin',
+      pw_weak: 'on',
+      admin_email: 'admin@local.net',
+      admin_password: 'admin',
+      admin_password2: 'admin',
+    }
