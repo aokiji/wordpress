@@ -46,3 +46,8 @@ configure wordpress admin account:
       admin_password: 'admin',
       admin_password2: 'admin',
     }
+
+modify default page:
+  mysql_query.run:
+    - database: wordpress
+    - query: "UPDATE wp_posts SET post_content = 'This is running in Vagrant!!!' WHERE post_title = 'Hello world!'"
