@@ -19,3 +19,11 @@ configure phpMyAdmin:
       username: {{ pillar['phpMyAdmin']['username'] }}
       password: {{ pillar['phpMyAdmin']['password'] }}
 
+set right permissions on phpMyAdmin config:
+  file.directory:
+    - name: /etc/phpMyAdmin
+    - user: apache
+    - group: apache
+    - recurse:
+      - user
+      - group
