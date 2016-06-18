@@ -24,6 +24,14 @@ configure apache:
     - watch_in:
       - service: httpd
 
+set apache listen:
+  file.replace:
+    - name: /etc/httpd/conf/httpd.conf
+    - pattern: '^Listen\s.*'
+    - repl: Listen 0.0.0.0:80
+    - watch_in:
+      - service: httpd
+
 change wordpress permissions:
   file.directory:
     - name: /usr/share/wordpress
