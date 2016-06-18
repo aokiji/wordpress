@@ -21,6 +21,8 @@ configure apache:
   file.managed:
     - name: /etc/httpd/conf.d/wordpress.conf
     - source: salt://wordpress/apache.conf
+    - watch_in:
+      - service: httpd
 
 change wordpress permissions:
   file.directory:

@@ -1,6 +1,7 @@
 install phpmyadmin:
   pkg.installed:
     - pkgs:
+      - httpd
       - phpMyAdmin 
 
 configure apache phpMyAdmin:
@@ -27,3 +28,4 @@ set right permissions on phpMyAdmin config:
     - recurse:
       - user
       - group
+    
